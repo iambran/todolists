@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List | 待办事项</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+<body onload="fetchLists()">
+    <div class="todolist">
+        <header>
+            <h1>To Do Lists</h1>
+        </header>
+        <div class="todolist__content">
+            <form action="" id="form">
+                <input type="text" id="input" name="todolist" placeholder="Add to do list here...">
+                <button type="submit" id="button">Add</button>
+            </form>
+            <div class="description">
+                <p>Click the to do list to toggle between "unfinished" and "finished".</p>
+            </div>
+            <div id="displayLists">
+
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+
+</body>
+</html>

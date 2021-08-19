@@ -1,0 +1,100 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+:root {
+    --font-heading: 'Merriweather', serif;
+    --font-content: 'Open Sans', sans-serif;
+}
+
+body {
+    font-family: var(--font-content);
+    color: #373737;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #e8e8e8;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+.todolist {
+    width: 800px;
+    max-width: 90vw;
+    min-height: 90vh;
+    padding: 2em;
+}
+h1 {
+    font-family: var(--font-heading);
+    text-align: center;
+}
+
+#displayLists > div:nth-child(even) {
+    background-color: #C9DB9E;
+    padding: 1em;
+    border-radius: 3px;
+}
+#displayLists > div:nth-child(odd) {
+    background-color: powderblue;
+    padding: 1em;
+    border-radius: 3px;
+}
+
+#displayLists > div {
+    margin-top: 0.5em;
+    cursor: pointer;
+}
+
+#form {
+    display: flex;
+    margin: 2em 0;
+}
+#form input {
+    width: 80%;
+    margin-right: 2%;
+    padding: 1em;
+    border: none;
+    border-radius: 3px;
+}
+#form button {
+    width: 18%;
+    cursor: pointer;
+    background-color: #DBB293;
+    color: white;
+    border: none;
+    border-radius: 3px;
+}
+
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.list-item p {
+    margin: 0;
+    padding: 0.5em;
+}
+.list-item span {
+    display: none;
+    border: 1px solid white;
+    background-color: white;
+    padding: calc(0.5em - 1px);
+    text-align: center;
+    border-radius: 3px;
+}
+
+.list-item.finish p {
+    text-decoration: line-through;
+}
+.list-item.finish span {
+    display: inline-block;
+}
+/* .description {
+    display: flex;
+} */
+.description {
+    font-size: 0.8em;
+    display: none;
+}
