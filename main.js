@@ -77,6 +77,9 @@ function validateForm(input) {
 
     function toggleFinish(e) {
 
+        // console.log(e.currentTarget); // e.currentTarget -> #displayLists
+        // console.log(e.target); // list-item, list-name or span
+
         if (e.target.classList.contains('list-item')) {
             // console.log(e.srcElement);
             // srcElement will work as well
@@ -88,7 +91,7 @@ function validateForm(input) {
             // e.srcElement.parentElement.classList.toggle('finish');
             e.target.parentElement.classList.toggle('finish');
         } else {
-            //console.log(e.srcElement);
+            // console.log(e.srcElement);
             // This will only remove the list from DOM, not local storage
             // e.target.parentElement.style.display = "none";
 
