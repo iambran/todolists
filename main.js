@@ -50,7 +50,7 @@ function fetchLists() {
         displayLists.innerHTML += `
             <div class="list-item">
                 <p class="list-name">${name}</p>
-                <span>Delete</span>
+                <span class="delete">Delete</span>
             </div>
         `;
     };
@@ -80,6 +80,7 @@ function validateForm(input) {
         // console.log(e.currentTarget); // e.currentTarget -> #displayLists
         // console.log(e.target); // list-item, list-name or span
 
+        /* First method
         if (e.target.classList.contains('list-item')) {
             // console.log(e.srcElement);
             // srcElement will work as well
@@ -107,7 +108,23 @@ function validateForm(input) {
                 localStorage.setItem('lists', JSON.stringify(lists));
                 fetchLists();
             }
-        };
+        }; // remove item from local storage
+        */
+
+        // Second method - less code
+        e.target.closest('.list-item').classList.toggle('finish');
+
+        if (e.target.classList.contains('delete')) {
+
+            var lists = JSON.parse(localStorage.getItem('lists'));
+            for (let i=0; i < lists.length; i++ ) {
+                if(lists[i].name == e.target.previousElementSibling.textContent) {
+                    lists.splice(i, 1);
+                }
+                localStorage.setItem('lists', JSON.stringify(lists));
+                fetchLists();
+            }
+        } // remove item from local storage
     };   
 
 
