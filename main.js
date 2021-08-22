@@ -114,7 +114,10 @@ function validateForm(input) {
         // Second method - less code
         e.target.closest('.list-item').classList.toggle('finish');
 
-        if (e.target.classList.contains('delete')) {
+        
+        if (e.target.matches('span.delete')) {
+        // or
+        // if (e.target.classList.contains('delete')) {
 
             var lists = JSON.parse(localStorage.getItem('lists'));
             for (let i=0; i < lists.length; i++ ) {
